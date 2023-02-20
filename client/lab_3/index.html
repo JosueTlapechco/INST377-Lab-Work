@@ -1,5 +1,92 @@
-<!--
-    Replace this with your working code from Lab 2, and include:
-    - The styles in this folder's `style.css`
-    - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
--->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Josue Tlapechco's Lab 1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class = "header"><h1>Josue's Labs for INST377</h1></header>
+    <div class = "wrapper">
+      <div class = "container">
+        <div class = "left_section box">
+          <h2>Albums</h2>
+          <ol class = "box">
+            <li>
+              Karate - Some Boots
+            </li>
+            <li>
+              Hum - Downward is Heavenward
+            </li>
+            <li>
+              Descendents - Milo Goes to College
+            </li>
+            <li>
+              Steely Dan - Aja
+            </li>
+            <li>
+              Sleater Kinney - Dig Me Out
+            </li>
+          </ol>
+        </div>
+        <div class = "right_section box">
+          <h2>Image Carousel</h2>
+          <div class="carousel">
+            <button class='prev'>prev</button>
+            <div class = "slides">
+              <div class="carousel_item visible"><img src="../lab_3/images/mini1.png" alt = "Image of a warhammer space marine" width="150" /></div>
+              <div class="carousel_item hidden"><img src="../lab_3/images/mini2.png" alt = "Image of a warhammer ork" width="150" /></div>
+              <div class="carousel_item hidden"><img src="../lab_3/images/mini3.png" alt = "Image of a warhammer battle sister" width="150" /></div>
+              <div class="carousel_item hidden"><img src="../lab_3/images/mini4.png" alt = "Image of a warhammer necron" width="150" /></div>
+            </div>
+            <button class='next'>next</button>
+          </div>
+          <div class = "box">
+            <p>
+              The images above are of four mini balls, however, they are unqiue as
+              they are made up of different files. The first file is a jpeg image,
+              which is a low storage photo. The second is a gif, which is a moving
+              animation, but its a little lower quality. The third is a png, which
+              is a higher quality image that supports transparent pixels, but cant
+              be enlarged or modified. The last is an svg, which is a vector image
+              and can be manipulated freely wihtout losing image quality.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <footer class = "footer">
+          <a
+            href="https://github.com/JosueTlapechco"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Josue Tlapechco's github</a
+          >
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<!--include your HTML opening tags
+and your hidden "head" tag
+and your "title" tag
+
+
+full-width wrapper div
+  header containing: YOUR NAME's Labs For INST377
+  container div
+      left div
+        sub-header saying "albums"
+        Your top 5 albums in an ordered list
+      right div (main div for the site)
+        sub-header saying "image carousel"
+          div to contain four images
+            four images of mini from your readings, all square (they're four different image types!)
+          div to contain a description or text
+            description of images
+
+
+full-width page footer containing your github account name and a link to your gitHub account a-->
