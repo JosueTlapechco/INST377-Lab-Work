@@ -1,7 +1,10 @@
-/*
-  Hook this script to index.html
-  by adding `<script src="script.js">` just before your closing `</body>` tag
-*/
+function filterList(list, query){
+  return list.filter((item)=>{
+    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseQuery = query.toLowerCase();
+    return lowerCaseName.includes(lowerCaseQuery)
+  })
+}
 
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
@@ -10,7 +13,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   form.addEventListener('submit', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
     submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
-
+    
     console.log('form submission'); // this is substituting for a "breakpoint"
 
     /*
@@ -56,19 +59,27 @@ async function mainEvent() { // the async keyword means we can make API requests
 
     // This changes the response from the GET into data we can use - an "object"
     const arrayFromJson = await results.json();
-    console.table(arrayFromJson.data); // this is called "dot notation"
+    console.table(arrayFromJson); // this is called "dot notation"
     // arrayFromJson.data - we're accessing a key called 'data' on the returned object
     // it initially contains all 1,000 records from your request
-  });
-
-  filterButton.addEventListener("click", (event)=>{
-    console.log('clicked filterButton');
+    filterButton.addEventListener("click", (event)=>{
+      console.log('clicked filterButton');
+    
+      const formData = new FormData(form);
+      const formProps = Object.fromEntries(formData);
   
-    const formData = new FormData(mainForm);
-    const formProps = Object.fromEntries(formData);
+      console.log(formProps);
+      const newList = filterList(arrayFromJson, formProps.resto);
+  
+      console.log(newList)
+    })
+  }
+  
+  )
+  
+  ;
 
-    console.log(formProps);
-  })
+ 
 }
 
 
