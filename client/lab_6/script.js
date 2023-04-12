@@ -50,12 +50,15 @@ async function mainEvent() { // the async keyword means we can make API requests
     loadAnimation.style.display = 'inline-block';
     
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    
+
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
 
     
     console.table(currentList); 
+    loadAnimation.style.display = 'none';
   });
 
   filterButton.addEventListener("click", (event)=>{
