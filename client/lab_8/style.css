@@ -116,6 +116,12 @@
     And will be what displays in your client
   */
   
+
+  #map {
+    width: 400px;
+    height: 380px;
+    margin-bottom: 1rem;
+  }
   .box {
     background-color: #726E97;
     border: 2px dashed;
